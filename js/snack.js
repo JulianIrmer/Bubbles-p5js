@@ -36,19 +36,4 @@ class Snack{
             this.y -= random(0, 3);
         }
     }
-
-    eat(){
-        for(let i = 0; i < snacks.length; i++){
-            let d = dist(snacks[i].x, snacks[i].y, snack.x, snack.y);
-        
-            if(d <= (snacks[i].r/2) + (snack.r/2)  && snacks[i].r <= snack.r){
-                snack.r += (snacks[i].r*0.2);
-                snacks.splice(i,1);
-            }
-            else if(d <= (snacks[i].r/2) + (snack.r/2) && snacks[i].r > snack.r){
-                snack.r = 15;
-                counter--;
-            }
-        }
-    }
 }
