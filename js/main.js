@@ -38,19 +38,19 @@ function drawSnacks(){
 function move(){
     if(keyCode === 37 && keyIsPressed === true){
         //left
-        bubble.x -= 4;
+        bubble.x -= 3;
     }
     if(keyCode === 38 && keyIsPressed === true){
         //up
-        bubble.y -= 4;
+        bubble.y -= 3;
     }
     if(keyCode === 39 && keyIsPressed === true){
         //right
-        bubble.x += 4;
+        bubble.x += 3;
     }
     if(keyCode === 40 && keyIsPressed === true){
         //down
-        bubble.y += 4;
+        bubble.y += 3;
     }
 }
 
