@@ -6,7 +6,7 @@ class Snack{
         this.red = random(0, 255);
         this.green = random(0, 255);
         this.blue = random(0, 255);
-        this.alpha = random(0, 100);
+        this.alpha = random(0, 160);
     }
 
     show(){
@@ -27,13 +27,13 @@ class Snack{
             this.x += random(0, 4);
         }
         if(this.x >= width){
-            this.x -= random(0, 3);
+            this.x -= random(0, 4);
         }
         if(this.y <= 0){
             this.y += random(0, 4);
         }
         if(this.y >= height){
-            this.y -= random(0, 3);
+            this.y -= random(0, 4);
         }
     }
 }

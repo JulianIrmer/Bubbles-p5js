@@ -9,14 +9,12 @@ let counter = lives;
 
 function setup(){
     createCanvas(width, height);
-    // frameRate(30);
     fillArr();
-    // setLives();
     bubble = new Bubble();
 }
 
 function draw(){
-    background(20);
+    background(30);
     drawSnacks();
     bubble.show();
     bubble.eat();
