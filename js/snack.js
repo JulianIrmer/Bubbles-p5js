@@ -1,39 +1,24 @@
 class Snack{
     constructor(){
-        this.r = random(3, 100);
-        this.x = random(this.r, width-this.r);
-        this.y = random(this.r, height-this.r);
-        this.red = random(0, 255);
-        this.green = random(0, 255);
-        this.blue = random(0, 255);
-        this.alpha = random(0, 160);
+        this.r = random(3, 150);
+        this.pos = createVector(random(-2*width, 2*width), random(-2*height, 2*height));
+        this.red = random(0, 205);
+        this.green = random(0, 205);
+        this.blue = random(0, 205);
+        this.alpha = random(100, 250);
     }
 
     show(){
-        stroke(50);
+        stroke(0);
         fill(this.red, this.green, this.blue, this.alpha);
-        ellipse(this.x, this.y, this.r);
+        ellipse(this.pos.x, this.pos.y, this.r);
     }
 
+    // All snacks move randomly 
     update(){
-        if(this.x > 0 && this.x < width && this.y > 0 && this.y < height ){
-            this.x += random(0, 3);
-            this.y += random(0, 3);
-            this.x -= random(0, 3);
-            this.y -= random(0, 3);
-        }
-
-        if(this.x <= 0){
-            this.x += random(0, 4);
-        }
-        if(this.x >= width){
-            this.x -= random(0, 4);
-        }
-        if(this.y <= 0){
-            this.y += random(0, 4);
-        }
-        if(this.y >= height){
-            this.y -= random(0, 4);
-        }
+            this.pos.x += random(0, 3);
+            this.pos.y += random(0, 3);
+            this.pos.x -= random(0, 3);
+            this.pos.y -= random(0, 3);
     }
 }
