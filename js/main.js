@@ -41,7 +41,7 @@ function drawSnacks(){
 // Set the origin to the middle of the screen and set the scale of the canvas in depency to the bubble radius 
 function translateAndScale(){
     translate(width/2, height/2);
-    newZoom = 30 / (bubble.r*0.5);
+    newZoom = 30 / (bubble.r*0.7);
     zoom = lerp(zoom, newZoom, 0.1);
     scale(zoom);    
     translate(-bubble.pos.x, -bubble.pos.y);
@@ -52,19 +52,19 @@ function translateAndScale(){
 function move(){
     if(keyCode === 37 && keyIsPressed === true){
         //left
-        bubble.pos.x -= (3 / newZoom) + 0.7;
+        bubble.pos.x -= (4 / newZoom) + 0.7;
     }
     if(keyCode === 38 && keyIsPressed === true){
         //up
-        bubble.pos.y -= (3 / newZoom) + 0.7;
+        bubble.pos.y -= (4 / newZoom) + 0.7;
     }
     if(keyCode === 39 && keyIsPressed === true){
         //right
-        bubble.pos.x += (3 / newZoom) + 0.7;
+        bubble.pos.x += (4 / newZoom) + 0.7;
     }
     if(keyCode === 40 && keyIsPressed === true){
         //down
-        bubble.pos.y += (3 / newZoom) + 0.7;
+        bubble.pos.y += (4 / newZoom) + 0.7;
     }
 }
 

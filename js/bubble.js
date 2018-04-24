@@ -1,7 +1,7 @@
 class Bubble{
     constructor(){
         this.pos = createVector(0, 0);
-        this.r = 15;
+        this.r = 20;
     }
     show(){
         stroke(255);

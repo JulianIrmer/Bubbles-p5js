@@ -9,7 +9,7 @@ class Snack{
     }
 
     show(){
-        stroke(0);
+        noStroke();
         fill(this.red, this.green, this.blue, this.alpha);
         ellipse(this.pos.x, this.pos.y, this.r);
     }
