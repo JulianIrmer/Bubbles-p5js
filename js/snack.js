@@ -9,16 +9,14 @@ class Snack{
     }
 
     show(){
-        noStroke();
+        stroke(180, 180, 180, 180);
         fill(this.red, this.green, this.blue, this.alpha);
         ellipse(this.pos.x, this.pos.y, this.r);
     }
 
     // All snacks move randomly 
     update(){
-            this.pos.x += random(0, 3);
-            this.pos.y += random(0, 3);
-            this.pos.x -= random(0, 3);
-            this.pos.y -= random(0, 3);
+            this.pos.x += random(-1, 1);
+            this.pos.y += random(-1, 1);
     }
 }

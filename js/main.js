@@ -5,7 +5,7 @@ const count = width/3;
 let bubble;
 const lives = 1;
 let counter = lives;
-
+let vel;
 let zoom = 1;
 let newZoom;
 
@@ -41,10 +41,17 @@ function drawSnacks(){
 // Set the origin to the middle of the screen and set the scale of the canvas in depency to the bubble radius 
 function translateAndScale(){
     translate(width/2, height/2);
-    newZoom = 30 / (bubble.r*0.7);
+    newZoom = 30 / (bubble.r*0.8);
     zoom = lerp(zoom, newZoom, 0.1);
-    scale(zoom);    
+
+    if( zoom <= 0.35){
+        zoom = 0.35;
+    }    
+    scale(zoom);
     translate(-bubble.pos.x, -bubble.pos.y);
+
+    // Calculation the velocity of the player in depency of the scaling
+    vel = (4 / newZoom) + 0.7;
 }
 
 
@@ -52,19 +59,19 @@ function translateAndScale(){
 function move(){
     if(keyCode === 37 && keyIsPressed === true){
         //left
-        bubble.pos.x -= (4 / newZoom) + 0.7;
+        bubble.pos.x -= vel;
     }
     if(keyCode === 38 && keyIsPressed === true){
         //up
-        bubble.pos.y -= (4 / newZoom) + 0.7;
+        bubble.pos.y -= vel;
     }
     if(keyCode === 39 && keyIsPressed === true){
         //right
-        bubble.pos.x += (4 / newZoom) + 0.7;
+        bubble.pos.x += vel;
     }
     if(keyCode === 40 && keyIsPressed === true){
         //down
-        bubble.pos.y += (4 / newZoom) + 0.7;
+        bubble.pos.y += vel;
     }
 }
 
