@@ -7,7 +7,7 @@ class Snack{
         this.blue = random(0, 205);
         this.alpha = random(100, 250);
     }
-
+    // Display the snacks with random color at random positions
     show(){
         stroke(180, 180, 180, 180);
         fill(this.red, this.green, this.blue, this.alpha);

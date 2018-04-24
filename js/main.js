@@ -95,7 +95,7 @@ function restart(){
     // document.querySelector("#counter").innerHTML = "Lifes: " +counter;
     bubble.pos.x = 0;
     bubble.pos.y = 0;
-    bubble.r  = 15; 
+    bubble.r  = 20; 
     zoom = 1;
     newZoom = 0; 
     scale(1);
