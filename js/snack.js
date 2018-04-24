@@ -7,14 +7,14 @@ class Snack{
         this.blue = random(0, 205);
         this.alpha = random(100, 250);
     }
-    // Display the snacks with random color at random positions
+    // Display the snacks with random color at random positions.
     show(){
         stroke(180, 180, 180, 180);
         fill(this.red, this.green, this.blue, this.alpha);
         ellipse(this.pos.x, this.pos.y, this.r);
     }
 
-    // All snacks move randomly 
+    // All snacks move randomly.
     update(){
             this.pos.x += random(-1, 1);
             this.pos.y += random(-1, 1);

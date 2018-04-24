@@ -3,8 +3,7 @@ const height = window.innerHeight;
 const snacks = [];
 const count = width/3;
 let bubble;
-const lives = 1;
-let counter = lives;
+let counter = 1;
 let vel;
 let zoom = 1;
 let newZoom;
@@ -25,12 +24,14 @@ function draw(){
     stopGame();
 }
 
+// Fill the array with snacks.
 function fillArr(){
     for(let i = 0; i < count; i++){
         snacks[i] = new Snack();
     }
 }
 
+// Display snacks on the canvas.
 function drawSnacks(){
     for(let snack of snacks){
         snack.show();
@@ -38,7 +39,7 @@ function drawSnacks(){
     }
 }
 
-// Set the origin to the middle of the screen and set the scale of the canvas in depency to the bubble radius 
+// Set the origin to the middle of the screen and set the scale of the canvas in depency to the bubble radius. 
 function translateAndScale(){
     translate(width/2, height/2);
     newZoom = 30 / (bubble.r*0.8);
@@ -50,12 +51,12 @@ function translateAndScale(){
     scale(zoom);
     translate(-bubble.pos.x, -bubble.pos.y);
 
-    // Calculation the velocity of the player in depency of the scaling
+// Calculation the velocity of the player in depency of the scaling.
     vel = (4 / newZoom) + 0.7;
 }
 
 
-// Increse velocity when the radius of the player increase
+// Increase velocity when the radius of the player increases.
 function move(){
     if(keyCode === 37 && keyIsPressed === true){
         //left
@@ -75,6 +76,7 @@ function move(){
     }
 }
 
+// Stopping the game if the player hits a bigger opponent.
 function stopGame(){
     if(counter <= 0){
         noLoop();
@@ -89,10 +91,10 @@ function stopGame(){
     }
 }
 
+// Resets the whole game.
 function restart(){
-    counter = lives;
+    counter = 1;
     document.querySelector("#wrapper").style.zIndex = -1;
-    // document.querySelector("#counter").innerHTML = "Lifes: " +counter;
     bubble.pos.x = 0;
     bubble.pos.y = 0;
     bubble.r  = 20; 
@@ -101,8 +103,4 @@ function restart(){
     scale(1);
     fillArr();
     loop();
-}
-
-function setLives(){
-    document.querySelector("#counter").innerHTML = "Lifes: " +counter;
 }
