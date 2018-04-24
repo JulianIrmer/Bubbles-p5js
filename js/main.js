@@ -1,7 +1,7 @@
 const width = window.innerWidth;
 const height = window.innerHeight;
 const snacks = [];
-const count = width/10;
+const count = width/9;
 let bubble;
 const lives = 1;
 let counter = lives;
@@ -14,7 +14,7 @@ function setup(){
 }
 
 function draw(){
-    background(30);
+    background(200);
     drawSnacks();
     bubble.show();
     bubble.eat();
@@ -36,19 +36,19 @@ function drawSnacks(){
 }
 
 function move(){
-    if(keyCode === 37 && keyIsPressed === true){
+    if(keyCode === 37 && keyIsPressed === true && bubble.x > 0){
         //left
         bubble.x -= 3;
     }
-    if(keyCode === 38 && keyIsPressed === true){
+    if(keyCode === 38 && keyIsPressed === true && bubble.y > 0){
         //up
         bubble.y -= 3;
     }
-    if(keyCode === 39 && keyIsPressed === true){
+    if(keyCode === 39 && keyIsPressed === true && bubble.x < width){
         //right
         bubble.x += 3;
     }
-    if(keyCode === 40 && keyIsPressed === true){
+    if(keyCode === 40 && keyIsPressed === true && bubble.y < height){
         //down
         bubble.y += 3;
     }
@@ -58,6 +58,13 @@ function stopGame(){
     if(counter <= 0){
         noLoop();
         document.querySelector("#wrapper").style.zIndex = 1;
+        document.querySelector('#result').innerHTML = 'GAME OVER!';
+    }
+
+    if(snacks.length <= 0){
+        noLoop();
+        document.querySelector("#wrapper").style.zIndex = 1;
+        document.querySelector('#result').innerHTML = 'YOU WON!';
     }
 }
 

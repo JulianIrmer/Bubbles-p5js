@@ -1,6 +1,6 @@
 class Snack{
     constructor(){
-        this.r = random(3, 80);
+        this.r = random(3, 100);
         this.x = random(this.r, width-this.r);
         this.y = random(this.r, height-this.r);
         this.red = random(0, 255);
@@ -10,7 +10,7 @@ class Snack{
     }
 
     show(){
-        stroke(200);
+        stroke(50);
         fill(this.red, this.green, this.blue, this.alpha);
         ellipse(this.x, this.y, this.r);
     }
