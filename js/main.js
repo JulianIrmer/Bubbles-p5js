@@ -1,6 +1,8 @@
 const width = window.innerWidth;
 const height = window.innerHeight;
 const snacks = [];
+const low = 3;
+const high = 150;
 const count = width/3;
 let bubble;
 let counter = 1;
@@ -27,7 +29,7 @@ function draw(){
 // Fill the array with snacks.
 function fillArr(){
     for(let i = 0; i < count; i++){
-        snacks[i] = new Snack();
+        snacks[i] = new Snack(low, high, width, height, 1);
     }
 }
 
@@ -45,8 +47,8 @@ function translateAndScale(){
     newZoom = 30 / (bubble.r*0.8);
     zoom = lerp(zoom, newZoom, 0.1);
 
-    if( zoom <= 0.35){
-        zoom = 0.35;
+    if( zoom <= 0.1){
+        zoom = 0.1;
     }    
     scale(zoom);
     translate(-bubble.pos.x, -bubble.pos.y);

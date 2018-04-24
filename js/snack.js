@@ -1,11 +1,11 @@
 class Snack{
-    constructor(){
-        this.r = random(3, 150);
-        this.pos = createVector(random(-2*width, 2*width), random(-2*height, 2*height));
+    constructor(low, high, x, y, iteration){
+        this.r = random(low, high);
+        this.pos = createVector(random((-2+iteration)*x, (2+iteration)*x), random((-2+iteration)*y, (2+iteration)*y));
         this.red = random(0, 205);
         this.green = random(0, 205);
         this.blue = random(0, 205);
-        this.alpha = random(100, 250);
+        this.alpha = random(100, 220);
     }
     // Display the snacks with random color at random positions.
     show(){
